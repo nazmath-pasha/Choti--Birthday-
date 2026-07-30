@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Choti ❤️</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-gradient"></div>
+    <div id="particle-container"></div>
+    <div class="stars"></div>
+
+    <!-- Music Control -->
+    <div id="music-control" class="hidden">
+        <button id="toggle-music" aria-label="Toggle Music">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="birthday-audio" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Screen 1: Loading/Entry -->
+    <section id="screen-1" class="screen active">
+        <div class="glass-card central-content">
+            <h1 class="glow-text animate-up">A Special Surprise...</h1>
+            <p class="fade-in-delayed">Turn up the volume & stay focused.</p>
+            <button id="start-btn" class="premium-btn">Tap to Begin ❤️</button>
+        </div>
+    </section>
+
+    <!-- Screen 2: Chat Animation -->
+    <section id="screen-2" class="screen hidden">
+        <div class="chat-container">
+            <div id="chat-box" class="chat-messages"></div>
+            <button id="chat-next" class="premium-btn hidden">Keep tapping...</button>
+        </div>
+    </section>
+
+    <!-- Screen 3: Gift Box -->
+    <section id="screen-3" class="screen hidden">
+        <div class="gift-wrapper">
+            <div class="gift-box" id="main-gift">
+                <div class="gift-lid"></div>
+                <div class="gift-body"></div>
+                <div class="gift-ribbon"></div>
+            </div>
+            <h2 class="gift-instruction">Tap to Open</h2>
+        </div>
+        <canvas id="fireworks-canvas"></canvas>
+    </section>
+
+    <!-- Screen 4: Heart Collage -->
+    <section id="screen-4" class="screen hidden">
+        <div id="heart-collage-container">
+            <!-- 30 Photos will be injected here by JS -->
+        </div>
+        <div class="heart-overlay-text">Our Bond is Eternal</div>
+    </section>
+
+    <!-- Screen 5: Premium Slideshow -->
+    <section id="screen-5" class="screen hidden">
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: url('photo1.jpg')"></div>
+            <div class="slide" style="background-image: url('photo2.jpg')"></div>
+            <div class="slide" style="background-image: url('photo3.jpg')"></div>
+            <!-- Additional slides added via JS if needed -->
+            <div class="slide-nav">
+                <button id="prev-slide">←</button>
+                <button id="next-slide">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 6: Typing Letter -->
+    <section id="screen-6" class="screen hidden">
+        <div class="letter-paper">
+            <div id="typing-text"></div>
+            <span class="cursor">|</span>
+        </div>
+        <button id="letter-next" class="premium-btn hidden">Proceed ❤️</button>
+    </section>
+
+    <!-- Screen 7: Countdown -->
+    <section id="screen-7" class="screen hidden">
+        <div class="glass-card">
+            <h2 class="section-title">Since the day we met...</h2>
+            <p class="date-label">22 March 2025</p>
+            <div class="countdown-grid">
+                <div class="count-item"><span id="years">00</span><p>Years</p></div>
+                <div class="count-item"><span id="months">00</span><p>Months</p></div>
+                <div class="count-item"><span id="days">00</span><p>Days</p></div>
+                <div class="count-item"><span id="hours">00</span><p>Hours</p></div>
+                <div class="count-item"><span id="mins">00</span><p>Mins</p></div>
+                <div class="count-item"><span id="secs">00</span><p>Secs</p></div>
+            </div>
+            <button id="final-trigger" class="premium-btn">Check Final Surprise</button>
+        </div>
+    </section>
+
+    <!-- Final Screen -->
+    <section id="final-screen" class="screen hidden">
+        <div class="celebration-content">
+            <h1 class="hbd-title">Happy Birthday Choti!</h1>
+            <div class="final-quote">
+                "Not by blood.<br>
+                Not by distance.<br>
+                But by heart.<br>
+                Forever."
+            </div>
+            <button id="replay-btn" class="premium-btn-outline">Replay from Start ❤️</button>
+        </div>
+        <div id="balloon-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
